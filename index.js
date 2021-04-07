@@ -26,13 +26,14 @@ client.connect(err => {
 
   })
 
-  app.post('/addProduct', (req,res)=>{
-    const products =req.body;
-    productsCollection.insertOne(products)
-    .then(result =>{
-      console.log(result);
-      res.send(result.insertedCount)
-    })
+  app.post('/addProduct', (req, res) => {
+    const newProduct = req.body;
+    console.log(newProduct)
+    productsCollection.insertOne(newProduct)
+      .then(result => {
+        console.log(result);
+        res.send(result.insertedCount)
+      })
   })
 
 
