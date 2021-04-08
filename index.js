@@ -40,6 +40,4 @@ client.connect(err => {
 });
 
 
-app.listen(port, () => {
-  console.log('working')
-})
+app.listen( process.env.PORT || port)
